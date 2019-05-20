@@ -6,7 +6,7 @@ import com.directmedia.onlinestore.core.entity.Work;
 
 public class Startup {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Artist tomCruise = new Artist("Tom Cruise");
         Artist michaelJackson = new Artist("Michael Jackson");
         Artist louisDeFunes = new Artist("Louis De Funes");

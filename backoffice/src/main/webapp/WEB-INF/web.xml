@@ -4,4 +4,45 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>homeServlet</servlet-name>
+    <servlet-class>com.directmedia.onlinestore.backoffice.controller.HomeServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>catalogue</servlet-name>
+    <servlet-class>com.directmedia.onlinestore.backoffice.controller.CatalogueServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>authentication</servlet-name>
+    <servlet-class>com.directmedia.onlinestore.backoffice.controller.AuthenticationServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>addwork</servlet-name>
+    <servlet-class>com.directmedia.onlinestore.backoffice.controller.AddWorkServlet</servlet-class>
+    
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>homeServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>catalogue</servlet-name>
+    <url-pattern>/catalogue</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>authentication</servlet-name>
+    <url-pattern>/authentication</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>addwork</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,7 +1,57 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>homeFront</servlet-name>
+        <servlet-class>com.directmedia.onlinestore.frontoffice.controller.HomeServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>catalogue</servlet-name>
+        <servlet-class>com.directmedia.onlinestore.frontoffice.controller.CatalogueServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>shoppingCart</servlet-name>
+        <servlet-class>com.directmedia.onlinestore.frontoffice.controller.ShoppingCartServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>addToCart</servlet-name>
+        <servlet-class>com.directmedia.onlinestore.frontoffice.controller.AddToCartServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>workDetail</servlet-name>
+        <servlet-class>com.directmedia.onlinestore.frontoffice.controller.WorkDetailServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>catalogue</servlet-name>
+        <url-pattern>/catalogue</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>homeFront</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>shoppingCart</servlet-name>
+        <url-pattern>/shopping-cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>addToCart</servlet-name>
+        <url-pattern>/addToCard</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>workDetail</servlet-name>
+        <url-pattern>/work-details</url-pattern>
+    </servlet-mapping>
 </web-app>

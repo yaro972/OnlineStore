@@ -4,18 +4,22 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+
     <servlet>
         <servlet-name>HellServlet</servlet-name>
         <servlet-class>com.travauxpratiques.firstapp.controller.HellServlet</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>SommeServlet</servlet-name>
         <servlet-class>com.travauxpratiques.firstapp.controller.SommeServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>HellServlet</servlet-name>
         <url-pattern>/hell</url-pattern>
     </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>home.html</welcome-file>

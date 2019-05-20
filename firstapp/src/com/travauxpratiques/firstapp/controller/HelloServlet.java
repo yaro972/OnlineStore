@@ -14,20 +14,20 @@ import java.io.PrintWriter;
 @WebServlet(name = "HelloServlet", urlPatterns = "/hello")
 public class HelloServlet extends HttpServlet {
     /**
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request Request Object
+     * @param response Response Object
+     * @throws ServletException Error Exception
+     * @throws IOException Error Exception
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     /**
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request Request Object
+     * @param response Response Object
+     * @throws ServletException Error Exception
+     * @throws IOException Error Exception
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

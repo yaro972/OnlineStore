@@ -4,7 +4,7 @@ package com.directmedia.onlinestore.core.entity;
 public class Work {
     private String title;
     private String genre;
-    private int relesae;
+    private int release;
     private String summary;
     private Artist mainArtist;
     private long id;
@@ -25,12 +25,12 @@ public class Work {
         this.id = id;
     }
 
-    public int getRelesae() {
-        return relesae;
+    public int getRelease() {
+        return release;
     }
 
-    public void setRelesae(int relesae) {
-        this.relesae = relesae;
+    public void setRelease(int release) {
+        this.release = release;
     }
 
     public long getId() {
@@ -47,14 +47,6 @@ public class Work {
 
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-
-    public int getRelease() {
-        return relesae;
-    }
-
-    public void setRelease(int relesae) {
-        this.relesae = relesae;
     }
 
     public String getSummary() {

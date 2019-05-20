@@ -20,7 +20,7 @@ public class HomeServlet extends HttpServlet {
 
         try (PrintWriter out = resp.getWriter()) {
             out.print("<html><body>" +
-                    "Bonjour "+ loginName +
+                    "Bonjour " + loginName +
                     "<h1>OnlineStore-Gestion de la boutique</h1> " +
                     "<div><a href=\"http://localhost:8080/backoffice/add-work-form.html \">Ajouter une œuvre au catalogue</a></div>" +
                     "<div><a href=\"http://localhost:8080/backoffice/catalogue\">Accès au catalogue des oeuvres</a></div>" +
