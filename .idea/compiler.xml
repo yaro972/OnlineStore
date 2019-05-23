@@ -6,18 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="core" />
+        <module name="firstappcore" />
         <module name="frontoffice" />
         <module name="backoffice" />
-        <module name="firstappcore" />
+        <module name="core" />
         <module name="firstapp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="backoffice" target="1.7" />
-      <module name="core" target="1.8" />
-      <module name="firstapp" target="1.7" />
-      <module name="firstappcore" target="1.5" />
+      <module name="backoffice" target="8" />
+      <module name="core" target="8" />
+      <module name="firstapp" target="8" />
+      <module name="firstappcore" target="8" />
       <module name="frontoffice" target="8" />
     </bytecodeTargetLevel>
   </component>

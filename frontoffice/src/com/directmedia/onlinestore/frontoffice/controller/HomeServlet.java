@@ -15,7 +15,11 @@ public class HomeServlet extends HttpServlet {
 //        super.doGet(req, resp);
 
         try (PrintWriter out = resp.getWriter()) {
-            out.print("<html><body><h1>OnlineStore, Votre boutique multimédia en ligne</h1> <div><a href=\"http://localhost:8080/frontoffice/catalogue\">Accès au catalogue des oeuvres</a>    </div><div>  <a href=\"http://localhost:8080/backoffice/home\">Vers backoffice</a></div>              </body></html>");
+            out.print("<html>");
+            out.print("<body><h1>OnlineStore, Votre boutique multimédia en ligne</h1>");
+            out.print("<div><a href=\"catalogue\">Accès au catalogue des oeuvres</a>  </div>");
+            out.print("<div><a href=\"/backoffice/home\">Vers backoffice</a></div></body></html>");
+            out.print("</body></html>");
 
         } catch (Exception e) {
             e.printStackTrace();

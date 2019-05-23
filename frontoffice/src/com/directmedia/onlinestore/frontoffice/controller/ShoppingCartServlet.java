@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Set;
 
-@WebServlet(name = "ShoppingCartServlet", urlPatterns = "/shopping-cart")
+@WebServlet(name = "ShoppingCartServlet", urlPatterns = {"/shopping-cart"})
 public class ShoppingCartServlet extends HttpServlet {
     /*
      *Ce caddie sera matérialisé par une nouvelle classe ShoppingCartServlet située dans les sources du module core au côté des autres entités de l'application.

@@ -1,11 +1,15 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="frontoffice:Web exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/frontoffice_Web_exploded</output-path>
+  <artifact type="exploded-war" name="frontoffice">
+    <output-path>$PROJECT_DIR$/out/artifacts/frontoffice</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="frontoffice/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="frontoffice" />
+          <element id="module-output" name="core" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: Arquillian JUnit:Release" />
         </element>
       </element>
     </root>
