@@ -19,6 +19,11 @@ public class PayerLivreServlet extends HttpServlet {
         String numeroCarte = req.getParameter("cardNumber");
         String identifiantLivre = (String) session.getAttribute("identifiantLivre");
 
+        // Suppprimer un élément de la session
+        // session.removeAttribute("identifiantLivre");
+        // Supprimer la session en cours
+        // session.invalidate();
+
         PrintWriter out = resp.getWriter();
 
         out.print("<html><body>");

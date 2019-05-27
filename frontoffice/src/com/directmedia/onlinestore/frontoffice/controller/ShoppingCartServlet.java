@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Set;
@@ -39,11 +40,13 @@ La servlet retournera enfin un contenu HTML permettant d'afficher :
 le texte de confirmation « Œuvre ajoutée au caddie (X) » où X sera le nombre d’œuvre que comporte désormais le caddie
 Un lien permettant de retourner au catalogue.
      */
-    private Set<Work> items ;
+    private Set<Work> items;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 
         response.setContentType("text/html");
+        HttpSession session = request.getSession();
+        // session.
 
         try (PrintWriter out = response.getWriter()) {
             out.println("<html>");

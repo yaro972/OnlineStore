@@ -19,17 +19,36 @@ public class HomeServlet extends HttpServlet {
         String loginName = (String) session.getAttribute("loginName");
 
         try (PrintWriter out = resp.getWriter()) {
-            out.print("<html><body>" +
-                    "Bonjour " + loginName +
-                    "<h1>OnlineStore-Gestion de la boutique</h1> " +
-                    "<div><a href=\"add-work-form.html \">Ajouter une œuvre au catalogue</a></div>" +
-                    "<div><a href=\"catalogue\">Accès au catalogue des oeuvres</a></div>" +
-                    "<div><a href=\"/frontoffice/home\">Vers FrontOffice</a></div> " +
-                    "</body></html>");
+            out.print("<html>");
+            out.print("<body>");
+            if (loginName == null || loginName.isEmpty()) {
+                out.print("Bonjour, veuillez-vous identifier ");
+                out.print("<a href=\"login.html\">ici</a>");
+            } else {
+                out.print("<p>Bonjour " + loginName);
+                out.print(" (<a href=\"logout\">Déconnexion</a>)</p>");
+                out.print("<h1>OnlineStore-Gestion de la boutique</h1> ");
+                out.print("<div><a href=\"add-work-form.html \">Ajouter une œuvre au catalogue</a></div>");
+                out.print("<div><a href=\"catalogue\">Accès au catalogue des oeuvres</a></div> ");
+                out.print("<div><a href=\"/frontoffice/home\">Vers FrontOffice</a></div>  ");
+            }
+            out.print("</body>");
+            out.print("</html>");
+
+
+//            out.print("<html><body>" +
+//                    "Bonjour " + loginName +
+//                    "<h1>OnlineStore-Gestion de la boutique</h1> " +
+//                    "<div><a href=\"add-work-form.html \">Ajouter une œuvre au catalogue</a></div>" +
+//                    "<div><a href=\"catalogue\">Accès au catalogue des oeuvres</a></div>" +
+//                    "<div><a href=\"/frontoffice/home\">Vers FrontOffice</a></div> " +
+//                    "</body></html>");
+
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 }
 
