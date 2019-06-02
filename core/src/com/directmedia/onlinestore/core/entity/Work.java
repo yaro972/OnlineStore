@@ -11,7 +11,7 @@ public class Work {
     public static long LastId;
 
     public Work() {
-        this.id= LastId ++;
+        this.id = LastId++;
     }
 
     public Work(String title) {
@@ -72,4 +72,5 @@ public class Work {
     public void setTitle(String title) {
         this.title = title;
     }
+
 }

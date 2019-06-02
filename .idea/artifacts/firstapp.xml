@@ -2,7 +2,7 @@
   <artifact type="exploded-war" name="firstapp">
     <output-path>$PROJECT_DIR$/out/artifacts/firstapp</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="firstapp/web/Web" />
+      <element id="javaee-facet-resources" facet="firstapp/web/Web firstapp" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="firstapp" />

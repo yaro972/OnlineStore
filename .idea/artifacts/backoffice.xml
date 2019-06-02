@@ -2,7 +2,7 @@
   <artifact type="exploded-war" name="backoffice">
     <output-path>$PROJECT_DIR$/out/artifacts/backoffice</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="backoffice/web/Web" />
+      <element id="javaee-facet-resources" facet="backoffice/web/Web backoffice" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="backoffice" />
