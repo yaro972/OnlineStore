@@ -23,13 +23,12 @@ public class AddToCartServlet extends HttpServlet {
 
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
 
-        Optional<Work> optionalWork = Catalogue.listOfWorks.stream().filter(work -> work.getId() == longId).findAny();
-
 
         if (cart == null) {
             cart = new ShoppingCart();
         }
 
+        Optional<Work> optionalWork = Catalogue.listOfWorks.stream().filter(work -> work.getId() == longId).findAny();
         if (optionalWork.isPresent()) {
 
             cart.Item.add(optionalWork.get());

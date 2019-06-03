@@ -18,12 +18,18 @@ public class HomeServlet extends HttpServlet {
         HttpSession session = req.getSession();
         String loginName = (String) session.getAttribute("loginName");
 
+        resp.addHeader("charset", "utf-8");
         try (PrintWriter out = resp.getWriter()) {
             out.print("<html>");
+            out.print("<head>");
+            out.print("<meta charset=\"UTF-8\" /> ");
+            out.print("</head>");
             out.print("<body>");
             if (loginName == null || loginName.isEmpty()) {
                 out.print("Bonjour, veuillez-vous identifier ");
                 out.print("<a href=\"login.html\">ici</a>");
+
+                resp.sendRedirect("login.html");
             } else {
                 out.print("<p>Bonjour " + loginName);
                 out.print(" (<a href=\"logout\">Déconnexion</a>)</p>");

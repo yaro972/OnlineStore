@@ -14,7 +14,8 @@ import java.util.Set;
 @WebServlet(name = "ShoppingCartServlet", urlPatterns = {"/shopping-cart"})
 public class ShoppingCartServlet extends HttpServlet {
     /*
-     *Ce caddie sera matérialisé par une nouvelle classe ShoppingCartServlet située dans les sources du module core au côté des autres entités de l'application.
+Ce caddie sera matérialisé par une nouvelle classe ShoppingCartServlet située dans les sources du module core au côté
+des autres entités de l'application.
 
 Cette classe disposera d'un attribut items de type Set<Work> .
 * Cette collection sera composée des œuvres que le client du front-office souhaite acquérir.
@@ -46,7 +47,7 @@ Un lien permettant de retourner au catalogue.
 
         response.setContentType("text/html");
         HttpSession session = request.getSession();
-        // session.
+        session.setAttribute("cartList", items);
 
         try (PrintWriter out = response.getWriter()) {
             out.println("<html>");
