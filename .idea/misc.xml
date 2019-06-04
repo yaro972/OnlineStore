@@ -2,7 +2,9 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/backoffice" />
+    <file type="web" url="file://$PROJECT_DIR$/core" />
     <file type="web" url="file://$PROJECT_DIR$/firstapp" />
+    <file type="web" url="file://$PROJECT_DIR$/firstappcore" />
     <file type="web" url="file://$PROJECT_DIR$/frontoffice" />
     <file type="web" url="file://$PROJECT_DIR$/test" />
     <file type="web" url="file://$PROJECT_DIR$/../OnlineStore2/backoffice/target/backoffice/WEB-INF/classes/main/webapp/WEB-INF/web.xml" />
@@ -15,12 +17,11 @@
         <option value="$PROJECT_DIR$/frontoffice/pom.xml" />
         <option value="$PROJECT_DIR$/backoffice/pom.xml" />
         <option value="$PROJECT_DIR$/core/pom.xml" />
-        <option value="$PROJECT_DIR$/firstapp/pom.xml" />
         <option value="$PROJECT_DIR$/firstappcore/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+    <output url="file://$PROJECT_DIR$/OnlineStore/out" />
   </component>
 </project>

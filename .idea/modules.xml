@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/OnlineStore/OnlineStore.iml" filepath="$PROJECT_DIR$/OnlineStore/OnlineStore.iml" />
       <module fileurl="file://$PROJECT_DIR$/backoffice/backoffice.iml" filepath="$PROJECT_DIR$/backoffice/backoffice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/firstapp/com.travauxpratiques.iml" filepath="$PROJECT_DIR$/firstapp/com.travauxpratiques.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backoffice/com.travauxpratiques (1).iml" filepath="$PROJECT_DIR$/backoffice/com.travauxpratiques (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.travauxpratiques (2).iml" filepath="$PROJECT_DIR$/core/com.travauxpratiques (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/firstappcore/com.travauxpratiques (3).iml" filepath="$PROJECT_DIR$/firstappcore/com.travauxpratiques (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontoffice/com.travauxpratiques (4).iml" filepath="$PROJECT_DIR$/frontoffice/com.travauxpratiques (4).iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/firstapp/firstapp.iml" filepath="$PROJECT_DIR$/firstapp/firstapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/firstappcore/firstappcore.iml" filepath="$PROJECT_DIR$/firstappcore/firstappcore.iml" />

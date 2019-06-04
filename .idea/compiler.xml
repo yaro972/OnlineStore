@@ -6,15 +6,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="backoffice" />
         <module name="firstappcore" />
         <module name="frontoffice" />
-        <module name="backoffice" />
+        <module name="com.travauxpratiques" />
+        <module name="com.travauxpratiques (1)" />
         <module name="core" />
-        <module name="firstapp" />
+        <module name="com.travauxpratiques (4)" />
+        <module name="com.travauxpratiques (2)" />
+        <module name="com.travauxpratiques (3)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="backoffice" target="8" />
+      <module name="com.travauxpratiques" target="8" />
+      <module name="com.travauxpratiques (1)" target="1.5" />
+      <module name="com.travauxpratiques (2)" target="1.5" />
+      <module name="com.travauxpratiques (3)" target="1.5" />
+      <module name="com.travauxpratiques (4)" target="1.5" />
       <module name="core" target="8" />
       <module name="firstapp" target="8" />
       <module name="firstappcore" target="8" />

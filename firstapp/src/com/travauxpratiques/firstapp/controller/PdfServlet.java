@@ -11,24 +11,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @WebServlet(name = "PdfServlet", urlPatterns = "/pdf")
 public class PdfServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("application/pdf");
-
+        resp.setContentType("application/pdf");
         try {
+
             Document document = new Document();
-            PdfWriter.getInstance(document, response.getOutputStream());
+            PdfWriter.getInstance(document, resp.getOutputStream());
+
 
             document.open();
-            document.add(new Paragraph("Hello World"));
+            Integer somme = (Integer) req.getAttribute("somme");
+            String message;
+
+            if (somme != null) message = "La somme des deux nombres est " + somme;
+            else message = "Hello World";
+            document.add(new Paragraph(message));
             document.close();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
