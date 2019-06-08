@@ -7,14 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="backoffice" />
+        <module name="firstapp" />
         <module name="firstappcore" />
         <module name="frontoffice" />
-        <module name="com.travauxpratiques" />
-        <module name="com.travauxpratiques (1)" />
         <module name="core" />
-        <module name="com.travauxpratiques (4)" />
-        <module name="com.travauxpratiques (2)" />
-        <module name="com.travauxpratiques (3)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
