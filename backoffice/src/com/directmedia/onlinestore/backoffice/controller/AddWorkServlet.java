@@ -31,6 +31,8 @@ public class AddWorkServlet extends HttpServlet {
         newWork.setGenre(genre);
         newWork.setSummary(summary);
         newWork.setMainArtist(newArtist);
+        long identifiantOeuvre = newWork.getId();
+
         try {
             if (!release.isEmpty()) {
 
@@ -56,6 +58,7 @@ public class AddWorkServlet extends HttpServlet {
         RequestDispatcher disp = null;
         if (success) {
             Catalogue.listOfWorks.add(newWork);
+            request.setAttribute("identifiantOeuvre", identifiantOeuvre);
             disp = request.getRequestDispatcher("/work-added-success");
 
         } else {

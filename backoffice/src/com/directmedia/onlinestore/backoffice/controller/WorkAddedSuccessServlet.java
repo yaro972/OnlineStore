@@ -17,6 +17,8 @@ public class WorkAddedSuccessServlet extends HttpServlet {
      */
 
     protected void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        long identifiantOeuvre = (long) req.getAttribute("identifiantOeuvre");
+
         resp.setContentType("text/html");
 
         PrintWriter out = resp.getWriter();
@@ -28,6 +30,7 @@ public class WorkAddedSuccessServlet extends HttpServlet {
         out.print("<body>");
         out.print("<div>");
         out.print("<h1>L\'oeuvre a bien ete ajoutee</h1>");
+        out.print("<p>Identifiant interne est : " + identifiantOeuvre + "<p>");
         out.print("<a href=\"catalogue\">retourner au catalogue</a> ");
         out.print("</div>");
         out.print("</body></html>");
