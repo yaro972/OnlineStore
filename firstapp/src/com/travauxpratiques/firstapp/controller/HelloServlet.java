@@ -3,7 +3,6 @@ package com.travauxpratiques.firstapp.controller;
 
 import com.travauxpratiques.firstappcore.Personne;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,20 +15,19 @@ public class HelloServlet extends HttpServlet {
     /**
      * @param request Request Object
      * @param response Response Object
-     * @throws ServletException Error Exception
-     * @throws IOException Error Exception
      */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
     }
 
     /**
      * @param request Request Object
      * @param response Response Object
-     * @throws ServletException Error Exception
      * @throws IOException Error Exception
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         Personne michelDupont = new Personne("Michel", "Dupont");
 
