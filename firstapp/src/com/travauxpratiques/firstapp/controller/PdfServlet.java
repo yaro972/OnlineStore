@@ -4,26 +4,23 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 
 @WebServlet(name = "PdfServlet", urlPatterns = {"/pdf"})
 public class PdfServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 
         resp.setContentType("application/pdf");
         try {
 
             Document document = new Document();
             PdfWriter.getInstance(document, resp.getOutputStream());
-
 
             document.open();
             Integer somme = (Integer) req.getAttribute("somme");
