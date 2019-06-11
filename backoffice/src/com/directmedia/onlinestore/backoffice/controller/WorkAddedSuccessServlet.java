@@ -1,6 +1,5 @@
 package com.directmedia.onlinestore.backoffice.controller;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +15,7 @@ public class WorkAddedSuccessServlet extends HttpServlet {
     Suivi d’un lien pour retourner au catalogue.
      */
 
-    protected void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         long identifiantOeuvre = (long) req.getAttribute("identifiantOeuvre");
 
         resp.setContentType("text/html");
@@ -32,17 +31,19 @@ public class WorkAddedSuccessServlet extends HttpServlet {
         out.print("<h1>L\'oeuvre a bien ete ajoutee</h1>");
         out.print("<p>Identifiant interne est : " + identifiantOeuvre + "<p>");
         out.print("<a href=\"catalogue\">retourner au catalogue</a> ");
+        out.print("<div>Identification réussie</p></div><div><a href=\"home.jsp\">Accès à la page " +
+                "d'accueil</a></div>");
         out.print("</div>");
         out.print("</body></html>");
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         processRequest(request, response);
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         processRequest(request, response);
     }
 }
