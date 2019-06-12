@@ -4,61 +4,33 @@ import com.directmedia.onlinestore.core.entity.Artist;
 import com.directmedia.onlinestore.core.entity.Catalogue;
 import com.directmedia.onlinestore.core.entity.Work;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "WorkDetailServlet", urlPatterns = "/work-details")
 public class WorkDetailServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
-        Boolean found = false;
 
         if (Catalogue.listOfWorks.isEmpty()) {
             initList();
         }
 
         response.setContentType("text/html, UTF-8");
-        try (PrintWriter out = response.getWriter()) {
 
-            Work work = Catalogue.listOfWorks.stream().filter(w -> w.getId() == Long.parseLong(id)).findFirst().get();
+        Work work = Catalogue.listOfWorks.stream().filter(w -> w.getId() == Long.parseLong(id)).findFirst().get();
 
-//            for (Work work : Catalogue.listOfWorks) {
-//                if (Integer.parseInt(id) == work.getId()) {
+        RequestDispatcher disp = null;
 
-                out.print("<html><body><div><h1>Detail de l'oeuvre " + work.getTitle() + "</h1></div>");
-
-                out.print("<div>");
-                out.print("Artiste : " + work.getMainArtist().getName() + "</br>");
-                out.print("Année de parution : " + work.getRelease() + "</br>");
-                out.print("Genre : " + work.getGenre() + "</br>");
-                out.print("Résumé : " + work.getSummary());
-                out.print("</div>");
-
-                out.print("<form method=\"POST\" action=\"addToCard\" >");
-                out.print("<input type=\"hidden\" name=\"identifiant\" value=\""+work.getId() +"\"/> ");
-                out.print("<button type=\"submit\" name=\"button\">Ajouter au caddie</button>");
-                out.print("</form>");
-//                found = true;
-//            }
-//            }
-
-//            if (!found) {
-//                out.print("<html><body><div>Oeuvre n° " + id + " non trouvée</div>");
-//            }
-
-            out.print("</body></html>");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        request.setAttribute("work", work);
+        disp = request.getRequestDispatcher("/work-detail.jsp");
+        disp.forward(request, response);
 
     }
 
@@ -70,7 +42,7 @@ public class WorkDetailServlet extends HttpServlet {
 
         Work minorityReport = new Work("Minority Report", 1);
         Work bad = new Work("Bad", 2);
-        Work leGendarmeDeSaintTropez = new Work(    "Le Gendarme de Saint-Tropez", 3);
+        Work leGendarmeDeSaintTropez = new Work("Le Gendarme de Saint-Tropez", 3);
 
 
         minorityReport.setMainArtist(tomCruise);
