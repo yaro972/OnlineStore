@@ -21,7 +21,7 @@
 <%
 } else {
 %>
-<p>Bonjour <%=loginName%>
+<p>Bonjour ${sessionScope.loginName}
     <a href="logout">Déconnexion</a></p>
 <h1>OnlineStore-Gestion de la boutique</h1>
 <div><a href="add-work-form.html ">Ajouter une œuvre au catalogue</a></div>
