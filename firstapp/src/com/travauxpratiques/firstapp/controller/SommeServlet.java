@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "SommeServlet", urlPatterns = {"/somme"})
 public class SommeServlet extends HttpServlet {
@@ -28,19 +27,13 @@ public class SommeServlet extends HttpServlet {
 
             String format = request.getParameter("format");
 
-
+            request.setAttribute("somme", somme);
             if (format != null && format.equals("pdf")) {
-                request.setAttribute("somme", somme);
                 disp = request.getRequestDispatcher("/pdf");
                 disp.forward(request, response);
             } else {
-
-                response.setContentType("text/html");
-                PrintWriter out = response.getWriter();
-
-                out.print("<html><body>");
-                out.print("La somme des 2 nombres fournis est " + somme);
-                out.print("</body></html>");
+                disp = request.getRequestDispatcher("/affichage-somme.jsp");
+                disp.forward(request, response);
             }
         } catch (NumberFormatException nfe) {
             disp = request.getRequestDispatcher("/unexpected-error");
