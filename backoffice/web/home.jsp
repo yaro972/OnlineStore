@@ -6,29 +6,39 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Online Store - Accueil Backoffice </title>
+    <link href="style.css" type="text/css"/>
 </head>
 <body>
-<%
-    String loginName = (String) session.getAttribute("loginName");
-    if (loginName == null || loginName.isEmpty()) { %>
-<div>
-    <p>Veuillez vous identifier</p>
-    <a href="login.html">ici</a>
-</div>
-<%
-} else {
-%>
-<p>Bonjour ${sessionScope.loginName}
-    <a href="logout">Déconnexion</a></p>
-<h1>OnlineStore-Gestion de la boutique</h1>
-<div><a href="add-work-form.html ">Ajouter une œuvre au catalogue</a></div>
-<div><a href="catalogue.jsp">Accès au catalogue des oeuvres</a></div>
-<div><a href="frontoffice/home.jsp">Vers FrontOffice</a></div>
-<%
-    }%>
+
+<c:if test="${ empty sessionScope.loginName}">
+    <div>
+        <p>Veuillez vous identifier</p>
+        <a href="login.html">ici</a>
+    </div>
+</c:if>
+
+<c:if test="${not empty sessionScope.loginName}">
+    <h1>OnlineStore-Gestion de la boutique</h1>
+    <div>
+        <section>
+            <p>
+                Bonjour ${sessionScope.loginName}
+                <a href="logout">Déconnexion</a>
+            </p>
+        </section>
+
+        <section>
+            <div><a href="add-work-form.html ">Ajouter une œuvre au catalogue</a></div>
+            <div><a href="catalogue.jsp">Accès au catalogue des oeuvres</a></div>
+            <div><a href="frontoffice/home.jsp">Vers FrontOffice</a></div>
+        </section>
+    </div>
+</c:if>
 
 </body>
 </html>
