@@ -57,7 +57,7 @@
         for (Work work : Catalogue.listOfWorks) {
     %>
     <li>
-        <%= work.getTitle()%> ( <%=work.getRelease()%> )
+        <%=work.getTitle()%> ( <%=work.getRelease()%> )
     </li>
     <%
         }
