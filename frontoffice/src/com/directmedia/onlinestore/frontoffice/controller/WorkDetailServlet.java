@@ -29,7 +29,7 @@ public class WorkDetailServlet extends HttpServlet {
         RequestDispatcher disp = null;
 
         request.setAttribute("work", work);
-        disp = request.getRequestDispatcher("/work-detail.jsp");
+        disp = request.getRequestDispatcher("WEB-INF/work-detail.jsp");
         disp.forward(request, response);
 
     }

@@ -52,7 +52,7 @@ public class CatalogueServlet extends HttpServlet {
         }
 
         request.setAttribute("listofworks", Catalogue.listOfWorks);
-        RequestDispatcher disp = request.getRequestDispatcher("/catalogue.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/catalogue.jsp");
         disp.forward(request, response);
 
 
