@@ -8,10 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="fr-fr">
 <head>
     <title>Online Store - Accueil Backoffice </title>
     <link href="style.css" type="text/css"/>
+    <script src="js/jquery-3.4.1.min.js" async></script>
+    <script src="js/application.js" async></script>
+    <meta charset="UTF-8">
 </head>
 <body>
 
@@ -34,11 +37,12 @@
 
         <section>
             <div><a href="add-work-form.html ">Ajouter une œuvre au catalogue</a></div>
-            <div><a href="catalogue">Accès au catalogue des oeuvres</a></div>
-            <div><a href="frontoffice/home.jsp">Vers FrontOffice</a></div>
+            <div><a href="catalogue">Afficher le catalogue</a></div>
+            <div><a href="/frontoffice/home.jsp">Vers FrontOffice</a></div>
         </section>
     </div>
 </c:if>
+
 
 </body>
 </html>
