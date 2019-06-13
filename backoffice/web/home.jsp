@@ -34,7 +34,7 @@
 
         <section>
             <div><a href="add-work-form.html ">Ajouter une œuvre au catalogue</a></div>
-            <div><a href="catalogue.jsp">Accès au catalogue des oeuvres</a></div>
+            <div><a href="catalogue">Accès au catalogue des oeuvres</a></div>
             <div><a href="frontoffice/home.jsp">Vers FrontOffice</a></div>
         </section>
     </div>

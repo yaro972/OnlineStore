@@ -4,20 +4,18 @@ import com.directmedia.onlinestore.core.entity.Artist;
 import com.directmedia.onlinestore.core.entity.Catalogue;
 import com.directmedia.onlinestore.core.entity.Work;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "CatalogueServlet", urlPatterns = {"/catalogue"})
 public class CatalogueServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
-
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         if (Catalogue.listOfWorks.isEmpty()) {
@@ -53,18 +51,11 @@ public class CatalogueServlet extends HttpServlet {
 
         }
 
+        request.setAttribute("listofworks", Catalogue.listOfWorks);
+        RequestDispatcher disp = request.getRequestDispatcher("/catalogue.jsp");
+        disp.forward(request, response);
 
-        try (PrintWriter out = response.getWriter()) {
-            out.print("<html><body><div><h1>Oeuvres au catalogue</h1></div>");
 
-            for (Work work : Catalogue.listOfWorks) {
-                out.println("<div>" + work.getTitle() + " (" + work.getRelease() + ")</div>");
-            }
-
-            out.print("</body></html>");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        request.getRequestURL();
     }
 }
