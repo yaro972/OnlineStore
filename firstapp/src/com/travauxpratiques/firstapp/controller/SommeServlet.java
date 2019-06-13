@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "SommeServlet", urlPatterns = {"/somme"})
 public class SommeServlet extends HttpServlet {
@@ -24,16 +25,22 @@ public class SommeServlet extends HttpServlet {
         RequestDispatcher disp = null;
         try {
             int somme = Integer.parseInt(nombre1) + Integer.parseInt(nombre2);
+            int produit = Integer.parseInt(nombre1) * Integer.parseInt(nombre2);
 
             String format = request.getParameter("format");
 
-            request.setAttribute("somme", somme);
             if (format != null && format.equals("pdf")) {
+                request.setAttribute("somme", somme);
                 disp = request.getRequestDispatcher("/pdf");
                 disp.forward(request, response);
             } else {
-                disp = request.getRequestDispatcher("WEB-INF/affichage-somme.jsp");
-                disp.forward(request, response);
+                String message = " {\"somme\": {\"numerique\" : " + somme + ", \"text\" : 12}, \"produit\": " +
+                        "{\"numerique\" : " + produit + ", \"text\" : 12}}";
+
+                response.setContentType("application/json");
+                PrintWriter out = response.getWriter();
+                out.print(message);
+
             }
         } catch (NumberFormatException nfe) {
             disp = request.getRequestDispatcher("/unexpected-error");
