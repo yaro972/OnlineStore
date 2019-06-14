@@ -1,5 +1,10 @@
 package com.travauxpratiques.firstapp.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.travauxpratiques.firstappcore.Produit;
+import com.travauxpratiques.firstappcore.Somme;
+import com.travauxpratiques.firstappcore.SommeEtProduit;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +16,6 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "SommeServlet", urlPatterns = {"/somme"})
 public class SommeServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,22 +25,33 @@ public class SommeServlet extends HttpServlet {
 
         RequestDispatcher disp = null;
         try {
-            int somme = Integer.parseInt(nombre1) + Integer.parseInt(nombre2);
-            int produit = Integer.parseInt(nombre1) * Integer.parseInt(nombre2);
+            int sommeNumerique = Integer.parseInt(nombre1) + Integer.parseInt(nombre2);
+            int produitNumerique = Integer.parseInt(nombre1) * Integer.parseInt(nombre2);
 
             String format = request.getParameter("format");
 
             if (format != null && format.equals("pdf")) {
-                request.setAttribute("somme", somme);
+                request.setAttribute("somme", sommeNumerique);
                 disp = request.getRequestDispatcher("/pdf");
                 disp.forward(request, response);
             } else {
-                String message = " {\"somme\": {\"numerique\" : " + somme + ", \"text\" : 12}, \"produit\": " +
-                        "{\"numerique\" : " + produit + ", \"text\" : 12}}";
 
                 response.setContentType("application/json");
+                ObjectMapper objectMapper = new ObjectMapper();
                 PrintWriter out = response.getWriter();
-                out.print(message);
+
+                SommeEtProduit sommeEtProduit = new SommeEtProduit();
+                Somme somme = new Somme();
+                somme.setNumerique(sommeNumerique);
+                somme.setTexte("trente-six");
+
+                Produit produit = new Produit();
+                produit.setNumerique(produitNumerique);
+                produit.setTexte("quarante-deux");
+
+                sommeEtProduit.setSomme(somme);
+                sommeEtProduit.setProduit(produit);
+                objectMapper.writeValue(out, sommeEtProduit);
 
             }
         } catch (NumberFormatException nfe) {
