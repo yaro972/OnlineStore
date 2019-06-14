@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" build-on-make="true" name="backoffice">
+  <artifact type="exploded-war" name="backoffice">
     <output-path>$PROJECT_DIR$/OnlineStore/out/artifacts/backoffice</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="backoffice/web/Web backoffice" />
@@ -10,9 +10,10 @@
           <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/webjars/jquery/3.4.1/jquery-3.4.1.jar" path-in-jar="/" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
-          <element id="library" level="project" name="Maven: org.webjars:jquery:3.4.1" />
-          <element id="library" level="project" name="com.fasterxml.jackson.core:jackson-databind:2.9.9" />
+          <element id="library" level="project" name="junit:junit:4.11" />
+          <element id="library" level="project" name="jstl:jstl:1.2" />
+          <element id="library" level="project" name="javax:javaee-web-api:8.0" />
+          <element id="library" level="project" name="org.webjars:jquery:3.4.1" />
         </element>
       </element>
     </root>
