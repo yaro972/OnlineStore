@@ -3,20 +3,20 @@ package com.directmedia.onlinestore.backoffice.controller;
 import com.directmedia.onlinestore.core.entity.Artist;
 import com.directmedia.onlinestore.core.entity.Catalogue;
 import com.directmedia.onlinestore.core.entity.Work;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "CatalogueServlet", urlPatterns = {"/catalogue"})
 public class CatalogueServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         if (Catalogue.listOfWorks.isEmpty()) {
             Artist tomCruise = new Artist("Tom Cruise");
@@ -48,14 +48,14 @@ public class CatalogueServlet extends HttpServlet {
             Catalogue.listOfWorks.add(minorityReport);
             Catalogue.listOfWorks.add(bad);
             Catalogue.listOfWorks.add(leGendarmeDeSaintTropez);
-
         }
 
-        request.setAttribute("listofworks", Catalogue.listOfWorks);
-        RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/catalogue.jsp");
-        disp.forward(request, response);
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.writeValue(out, Catalogue.listOfWorks);
 
 
-        request.getRequestURL();
     }
 }

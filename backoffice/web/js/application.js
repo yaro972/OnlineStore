@@ -8,7 +8,15 @@ $(document).ready(function () {
             $.ajax({
                 url: "catalogue",
                 success: function (result) {
-                    $("a[href=catalogue]").after('<br>' + result);
+                    var msg = "<h3>Oeuvres au catalogue</h3><ul>";
+
+                    result.forEach(function (el) {
+
+                        msg += "<li>" + el.title + "  (" + el.release + ")</li>";
+
+                    });
+                    $("a[href=catalogue]").after(msg);
+
                 }
             });
         }
