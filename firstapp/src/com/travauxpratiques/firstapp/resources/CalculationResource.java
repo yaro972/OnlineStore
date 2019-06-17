@@ -1,19 +1,28 @@
 package com.travauxpratiques.firstapp.resources;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.travauxpratiques.firstappcore.Produit;
+import com.travauxpratiques.firstappcore.Somme;
+import com.travauxpratiques.firstappcore.SommeEtProduit;
+
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 @Path("/calculation")
 public class CalculationResource {
-    public void sommeEtProduit() {
-        /*int sommeNumerique = Integer.parseInt(nombre1) + Integer.parseInt(nombre2);
-        int produitNumerique = Integer.parseInt(nombre1) * Integer.parseInt(nombre2);
-
-        response.setContentType("application/json");
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/somme-et-produit")
+    public SommeEtProduit sommeEtProduit(@QueryParam("nombre1") int nombre1, @QueryParam("nombre2") int nombre2) {
         ObjectMapper objectMapper = new ObjectMapper();
+        int sommeNumerique = nombre1 + nombre2;
+        int produitNumerique = nombre1 * nombre2;
 
-
-        SommeEtProduit sommeEtProduit = new SommeEtProduit();
         Somme somme = new Somme();
+        SommeEtProduit sommeEtProduit = new SommeEtProduit();
         somme.setNumerique(sommeNumerique);
         somme.setTexte("trente-six");
 
@@ -23,6 +32,7 @@ public class CalculationResource {
 
         sommeEtProduit.setSomme(somme);
         sommeEtProduit.setProduit(produit);
-        objectMapper.writeValue(out, sommeEtProduit);*/
+
+        return sommeEtProduit;
     }
 }

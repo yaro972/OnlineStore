@@ -4,7 +4,7 @@ $(document).ready(function () {
             $("form").submit();
         } else {
             $.ajax({
-                url: "somme",
+                url: "rest/calculation/somme-et-produit",
                 data: $("form").serialize(),
                 success: function (result) {
                     var message = "<p>La somme des 2 nombres fournis est <strong>" + result.somme.numerique + "-" + result.somme.texte + "</strong> </p>";

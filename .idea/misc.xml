@@ -21,6 +21,15 @@
         <option value="$PROJECT_DIR$/firstapp/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/backoffice/pom.xml" />
+        <option value="$PROJECT_DIR$/core/pom.xml" />
+        <option value="$PROJECT_DIR$/firstapp/pom.xml" />
+        <option value="$PROJECT_DIR$/firstappcore/pom.xml" />
+        <option value="$PROJECT_DIR$/frontoffice/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/OnlineStore/out" />
