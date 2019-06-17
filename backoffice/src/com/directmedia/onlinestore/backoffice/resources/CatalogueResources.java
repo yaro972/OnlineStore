@@ -1,23 +1,21 @@
-package com.directmedia.onlinestore.backoffice.controller;
+package com.directmedia.onlinestore.backoffice.resources;
 
 import com.directmedia.onlinestore.core.entity.Artist;
 import com.directmedia.onlinestore.core.entity.Catalogue;
 import com.directmedia.onlinestore.core.entity.Work;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import java.util.HashSet;
 
-@WebServlet(name = "CatalogueServlet", urlPatterns = {"/catalogue"})
-public class CatalogueServlet extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
+@Path("/catalogue")
+public class CatalogueResources {
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/liste")
+    public HashSet<Work> liste() {
         if (Catalogue.listOfWorks.isEmpty()) {
             Artist tomCruise = new Artist("Tom Cruise");
             Artist michaelJackson = new Artist("Michael Jackson");
@@ -50,12 +48,7 @@ public class CatalogueServlet extends HttpServlet {
             Catalogue.listOfWorks.add(leGendarmeDeSaintTropez);
         }
 
-        PrintWriter out = response.getWriter();
-        response.setContentType("application/json");
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.writeValue(out, Catalogue.listOfWorks);
-
+        return Catalogue.listOfWorks;
 
     }
 }

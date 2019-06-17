@@ -1,6 +1,5 @@
 package com.travauxpratiques.firstapp.resources;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.travauxpratiques.firstappcore.Produit;
 import com.travauxpratiques.firstappcore.Somme;
 import com.travauxpratiques.firstappcore.SommeEtProduit;
@@ -17,7 +16,6 @@ public class CalculationResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/somme-et-produit")
     public SommeEtProduit sommeEtProduit(@QueryParam("nombre1") int nombre1, @QueryParam("nombre2") int nombre2) {
-        ObjectMapper objectMapper = new ObjectMapper();
         int sommeNumerique = nombre1 + nombre2;
         int produitNumerique = nombre1 * nombre2;
 

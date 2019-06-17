@@ -6,7 +6,7 @@ $(document).ready(function () {
         if ($('h3').length < 1) {
             // if ($('body').children().length < 6) {
             $.ajax({
-                url: "catalogue",
+                url: "rest/catalogue/liste",
                 success: function (result) {
                     var msg = "<h3>Oeuvres au catalogue</h3><ul>";
 

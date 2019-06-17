@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="backoffice">
+  <artifact type="exploded-war" build-on-make="true" name="backoffice">
     <output-path>$PROJECT_DIR$/OnlineStore/out/artifacts/backoffice</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="backoffice/web/Web backoffice" />
@@ -11,11 +11,15 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="junit:junit:4.11" />
-          <element id="library" level="project" name="jstl:jstl:1.2" />
           <element id="library" level="project" name="javax:javaee-web-api:8.0" />
           <element id="library" level="project" name="org.webjars:jquery:3.4.1" />
           <element id="library" level="project" name="org.hamcrest:hamcrest-core:1.3" />
           <element id="library" level="project" name="org.glassfish.jersey.media:jersey-media-json-jackson:2.25.1" />
+          <element id="library" level="project" name="org.glassfish.jersey.containers:jersey-container-servlet:2.28" />
+          <element id="library" level="project" name="jstl:jstl:1.2" />
+          <element id="library" level="project" name="javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.2" />
+          <element id="library" level="project" name="javax.servlet.jsp.jstl:jstl-api:1.2" />
+          <element id="library" level="project" name="taglibs:standard:1.1.2" />
         </element>
       </element>
     </root>
