@@ -8,6 +8,7 @@
           <element id="module-output" name="backoffice" />
           <element id="module-output" name="core" />
           <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/webjars/jquery/3.4.1/jquery-3.4.1.jar" path-in-jar="/" />
+          <element id="module-output" name="services" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.4" />

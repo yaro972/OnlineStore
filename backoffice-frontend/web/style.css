@@ -1,0 +1,14 @@
+section:first-child {
+    display: inline-block;
+    width: 20%;
+}
+
+h1 > div {
+    display: inline-block;
+    width: 90%;
+}
+
+section:last-child {
+    display: inline-block;
+    width: 80%;
+}

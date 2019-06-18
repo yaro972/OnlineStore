@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="backoffice" />
+        <module name="firstapp" />
         <module name="firstappcore" />
         <module name="frontoffice" />
-        <module name="backoffice" />
+        <module name="services" />
         <module name="core" />
-        <module name="firstapp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -19,6 +20,7 @@
       <module name="firstapp" target="8" />
       <module name="firstappcore" target="8" />
       <module name="frontoffice" target="8" />
+      <module name="services" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

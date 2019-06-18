@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/core/pom.xml" />
         <option value="$PROJECT_DIR$/firstappcore/pom.xml" />
         <option value="$PROJECT_DIR$/firstapp/pom.xml" />
+        <option value="$PROJECT_DIR$/services/pom.xml" />
       </list>
     </option>
   </component>

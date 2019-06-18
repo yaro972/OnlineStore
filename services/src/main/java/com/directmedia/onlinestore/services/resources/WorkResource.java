@@ -1,4 +1,4 @@
-package com.directmedia.onlinestore.backoffice.resources;
+package com.directmedia.onlinestore.services.resources;
 
 import com.directmedia.onlinestore.core.entity.Artist;
 import com.directmedia.onlinestore.core.entity.Catalogue;
@@ -52,7 +52,6 @@ public class WorkResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
     public Response addWork(Work newWork) {
         Work work = new Work();
         work.setId(Catalogue.listOfWorks.size() + 1);
