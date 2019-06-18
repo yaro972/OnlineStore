@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/backoffice/backoffice.iml" filepath="$PROJECT_DIR$/backoffice/backoffice.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/firstapp/firstapp.iml" filepath="$PROJECT_DIR$/firstapp/firstapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/firstapp-frontend/firstapp-frontend.iml" filepath="$PROJECT_DIR$/firstapp-frontend/firstapp-frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/firstappcore/firstappcore.iml" filepath="$PROJECT_DIR$/firstappcore/firstappcore.iml" />
       <module fileurl="file://$PROJECT_DIR$/frontoffice/frontoffice.iml" filepath="$PROJECT_DIR$/frontoffice/frontoffice.iml" />
     </modules>
