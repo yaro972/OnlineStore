@@ -1,7 +1,6 @@
 package com.travauxpratiques.firstapp.controller;
 
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +12,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "PayerLivreServlet", urlPatterns = {"/payer-livre"})
 public class PayerLivreServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession();
         String numeroSession = session.getId();
         String numeroCarte = req.getParameter("cardNumber");

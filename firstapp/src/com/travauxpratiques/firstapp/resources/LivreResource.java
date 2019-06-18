@@ -8,10 +8,8 @@ package com.travauxpratiques.firstapp.resources;
 import com.travauxpratiques.firstappcore.Livre;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,17 +43,30 @@ public class LivreResource {
     @Path("/{numero}")
     public Livre get(@PathParam("numero") int numero) {
 
-        return catalogue.stream().filter(livre -> livre.getNumeroLivre() == numero).findFirst().get();
+        return catalogue.stream()
+                .filter(livre -> livre.getNumeroLivre() == numero)
+                .findFirst()
+                .orElse(null);
     }
 
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public Response add(@Context UriInfo info) {
-        String nom = info.getQueryParameters().getFirst("nom");
-        System.out.println(nom);
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response add(Livre newLivre) {
+        /*
+        Ne récupère pas correctement le Json passé dans le Body de la requête
+
+        => Doc Jersey
+        https://jersey.github.io/documentation/latest/jaxrs-resources.html#d0e2129
+
+         */
+        // public Response add( @QueryParam("nom") String nom, @Context UriInfo info) {
+        // MultivaluedMap<String, String> queryParam = info.getQueryParameters();
+        // String nomParam = queryParam.getFirst("nom");
+        System.out.println(newLivre);
         Livre livre = new Livre();
         livre.setNumeroLivre(catalogue.size() + 1);
-        livre.setNom(nom);
+        livre.setNom(newLivre.getNom());
         catalogue.add(livre);
         return Response.status(Response.Status.CREATED).entity(livre.getNumeroLivre()).build();
     }
@@ -70,7 +81,11 @@ public class LivreResource {
     @PUT
     @Path("/{numero}")
     public Response modify(@PathParam("numero") int numero, @QueryParam("nom") String nom) {
-        Livre livreAModifier = catalogue.stream().filter(livre -> livre.getNumeroLivre() == numero).findFirst().get();
+        Livre livreAModifier = catalogue.stream()
+                .filter(livre -> livre.getNumeroLivre() == numero)
+                .findFirst()
+                .orElse(null);
+        assert livreAModifier != null;
         livreAModifier.setNom(nom);
         return Response.status(Response.Status.OK).build();
     }
