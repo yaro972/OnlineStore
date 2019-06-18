@@ -53,16 +53,6 @@ public class LivreResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response add(Livre newLivre) {
-        /*
-        Ne récupère pas correctement le Json passé dans le Body de la requête
-
-        => Doc Jersey
-        https://jersey.github.io/documentation/latest/jaxrs-resources.html#d0e2129
-
-         */
-        // public Response add( @QueryParam("nom") String nom, @Context UriInfo info) {
-        // MultivaluedMap<String, String> queryParam = info.getQueryParameters();
-        // String nomParam = queryParam.getFirst("nom");
         System.out.println(newLivre);
         Livre livre = new Livre();
         livre.setNumeroLivre(catalogue.size() + 1);
